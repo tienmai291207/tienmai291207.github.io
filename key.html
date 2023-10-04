@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="" />
+    <title>Mai Thành Tiến</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="content-language" content="vi" />
+    <meta name="copyright" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="1 days" />
+    <meta http-equiv="content-language" content="vi" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="./icon.jpg">
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <audio id="background-music">
+  <source src="https://casang.site/nhac/1.mp3" type="audio/mpeg">
+  Trình duyệt của bạn không hỗ trợ phần tử audio.
+</audio>
+    <script>
+        var audio = document.getElementById("background-music");
+        var currentSongIndex = 0;
+
+        // Danh sách các URL của các bài hát
+        var songs = [
+            "https://casang.site/1.mp3",
+            "https://casang.site/2.mp3",
+            "https://casang.site/3.mp3",
+            "https://casang.site/4.mp3",
+            "https://casang.site/5.mp3",
+            "https://casang.site/6.mp3",
+        ];
+
+        // Hàm ngẫu nhiên để chọn bài hát mới
+        function getRandomSongIndex() {
+            return Math.floor(Math.random() * songs.length);
+        }
+
+        // Lấy trạng thái bài hát từ localStorage (nếu có)
+        var storedSongIndex = localStorage.getItem("currentSongIndex");
+        if (storedSongIndex !== null) {
+            currentSongIndex = parseInt(storedSongIndex, 10);
+        } else {
+            // Nếu chưa có trạng thái, chọn một bài hát ngẫu nhiên để bắt đầu
+            currentSongIndex = getRandomSongIndex();
+        }
+
+        // Chơi bài hát hiện tại
+        function playCurrentSong() {
+            audio.src = songs[currentSongIndex];
+            audio.play();
+        }
+
+        // Chuyển sang bài hát tiếp theo khi bài hát hiện tại kết thúc
+        audio.addEventListener("ended", function() {
+            currentSongIndex = getRandomSongIndex();
+            localStorage.setItem("currentSongIndex", currentSongIndex); // Lưu trạng thái bài hát vào localStorage
+            playCurrentSong();
+        });
+
+        // Gọi hàm để chơi bài hát hiện tại khi trang được tải lại
+        window.addEventListener('load', function() {
+            playCurrentSong();
+        });
+    </script>
+    <div id="overlay"></div>
+    <div id="welcome-popup" class="popup">
+        <h2>𝙉𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 !</h2>
+        <p> 𝘾𝙤𝙙𝙚𝙧 𝙈𝙖𝙞 𝙏𝙝𝙖𝙣𝙝 𝙏𝙞𝙚𝙣 </p>
+        <p>=>> 𝘾𝙡𝙞𝙘𝙠 𝙩𝙤 𝙘𝙤𝙣𝙩𝙞𝙣𝙪𝙚
+            <<=</p>
+    </div>
+    <script src="./chinh.js"></script>
+
+    <div style="display: flex; align-items: center;">
+
+        <a href="https://casang.site/" style="font-family: 'Concert One'; text-decoration: none; color: red; margin-right: 9px;" class="Active">HOME</a>
+        <a href="https://casang.site/tools" style="font-family: 'Concert One'; text-decoration: none; color: red;" class="Active">TOOLS</a>
+
+        <a style="font-family: 'Concert One'; color: rgb(255, 0, 0); font-size: 16px; margin-left: 10px;">
+
+        <span id="fps">60.0</span> FPS
+        
+        </a>
+    </div>
+    <div class="content-container">
+        <img class="Blob" src="https://casang.site/sang.jpg" alt="Avatar">
+        <h1 style="color: rgb(240, 243, 247); font-family: Arial, Helvetica, sans-serif">Mai Thành Tiến
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png" width="19" height="19" alt="Tích Xanh">
+        </h1>
+        <h2 class="TieuSu" style="font-family: 'Quicksand'; font-size: 18px; text-align: center;">
+            <span style="color:white; display: inline-block; text-align: center;">
+        Thế gian cỏ lá nhiều vô kể<br />Cớ sao nhớ mãi một nhành hoa?
+    </span>
+        </h2>
+        <div style="display: inline-block;">
+            <strong style="color: rgb(255, 0, 0); font-size: 16px; font-family: 'Rowdies';">Ngày tạo:</strong>
+            <span style="color: rgb(0, 240, 120); font-size: 16px; font-family: 'Rowdies'; animation: colorRotate 2.5s linear infinite;" id="momk"></span>
+        </div>
+        <br>
+        <br>
+        <hr class="custom-border">
+        <br>
+        <h3 style="color: rgb(0,255,0)" align="center" font-family: "Quicksand">CLICK VÀO Ô BÊN DƯỚI ĐỂ TỰ ĐỘNG SAO CHÉP KEY</h3>
+        <p>
+            <button class="button" name="submit" onclick="copyToClipboard('#keytool')" type="submit">
+                    <span id="keytool" style="color: #FF0000">BẠN CHƯA LẤY KEY</span>
+                </button>
+        </p>
+    </div>
+    </div>
+    <style>
+        .button {
+            background-color: rgba(0, 0, 0, 0);
+            /* Transparent background */
+            border: none;
+            /* No border */
+            width: 70%;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25), 2px 2px 2px rgba(0, 0, 0, 0.25), inset 2px 2px 4px rgba(255, 255, 255, 0.5), inset 2px 2px 6px rgba(255, 255, 255, 0.2), inset -1px -1px 6px rgba(218, 218, 218, 0.75);
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        var key = GetURLParameter('key');
+        if (key != "") {
+            document.getElementById("keytool").innerHTML = key;
+        }
+
+        function GetURLParameter(sParam) {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++) {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) {
+                    return sParameterName[1];
+                }
+            }
+        }
+
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+            return confirm('Bạn đã copy key');
+        }
+    </script>
+    <br>
+    <br>
+    <hr class="custom-border">
+    <br>
+    <u style="font-size: 25px; color: white; text-decoration: none; animation: glowing 1s infinite;">Social Network</u>
+    <div class="social-link" style="width: 200px; height: 30px;">
+        <a href="https://www.facebook.com/profile.php?id=1275398690&mibextid=ZbWKwL" target="_blank" style="font-size: 20px; text-decoration: none; position: relative;"><span class="glowing-text">Facebook</span>
+  </a>
+    </div>
+    <div class="social-link" style="width: 200px; height: 30px;">
+        <a href="https://tiktok.com/@tienmai291207" target="_blank" style="font-size: 20px; text-decoration: none; position: relative;"><span class="glowing-text">TikTok</span>
+  </a>
+    </div>
+    <div class="social-link" style="width: 200px; height: 30px;">
+        <a href="https://zaloapp.com/qr/p/19gurynhpby5h" target="_blank" style="font-size: 20px; text-decoration: none; position: relative;"><span class="glowing-text">Zalo</span>
+  </a>
+    </div>
+    <div class="social-link" style="width: 200px; height: 30px;">
+        <a href="https://t.me/casang2k7" target="_blank" style="font-size: 20px; text-decoration: none; position: relative;"><span class="glowing-text">Telegram</span>
+  </a>
+    </div>
+    <div class="social-link" style="width: 200px; height: 30px;">
+        <a href="https://t.me/MaiThanhTien" target="_blank" style="font-size: 20px; text-decoration: none; position: relative;"><span class="glowing-text">Box Telegram</span>
+  </a>
+    </div>
+    <div class="social-link" style="width: 200px; height: 30px;">
+        <a href="https://zalo.me/g/hofdrq811" target="_blank" style="font-size: 20px; text-decoration: none; position: relative;"><span class="glowing-text">Box Zalo</span>
+  </a>
+    </div>
+    <br>
+    <hr class="custom-border">
+    <u style="font-size: 25px; color: white; text-decoration: none; animation: glowing 1s infinite;">Mobile Bank</u>
+    <div class="social-bank" style="width: 280px; height: 60px;">
+        <a style="font-size: 23px; text-decoration: none; position: relative; text-align: center;">
+  <span class="glowing-text">Vietinbank</span>
+  <br />
+  <span style="font-size: 17px; text-decoration: none; position: relative; text-align: center;"><span class="glowing-text">10087XXXXXXX | MAI THANH TIEN</span>
+</a>
+    </div>
+
+    <div class="social-bank" style="width: 280px; height: 60px;">
+        <a style="font-size: 23px; text-decoration: none; position: relative; text-align: center;">
+  <span class="glowing-text">MoMo</span>
+  <br />
+  <span style="font-size: 17px; text-decoration: none; position: relative; text-align: center;"><span class="glowing-text">093993XXXX | MAI THANH TIEN</span>
+</a>
+    </div>
+    <br />
+    <hr class="custom-border">
+    <h2 style="font-size: 25px; color: white; text-align: center; text-decoration: none; animation: glowing 1s infinite;">About Me</h2>
+    <div class="social-bank" style="width: 280px; height: 100px;">
+        <a style="font-size: 18px; text-decoration: none; position: relative; text-align: center;">
+  <span class="glowing-text">Casang.site is a free source code sharing blog with quality and diverse content, we want to become a trusted destination for the programming community.</span>
+</a>
+    </div>
+
+    <div class="social-bank" style="width: 280px; height: 100px;">
+        <a style="font-size: 18px; text-decoration: none; position: relative; text-align: center;">
+  <span class="glowing-text">Subscriber our official telegram channel to report a bug related to this website
+</a>
+    </div>
+    <br />
+    <hr class="custom-border">
+    <br />
+    <span class="rainbow italic" class="copyright">Created By <a style="text-decoration: none;" class="copyright"
+            href="https://www.facebook.com/profile.php?id=1275398690">
+            <font class="rainbow" color="white"> Mai Thành Tiến</font>
+          </a>
+          <br />
+          <strong>All rights reserved © 2023 </strong>
+        </span>
+    <br>
+    <br>
+    <script>
+        function updateElapsedTime() {
+            var creationDate = new Date('2023-09-03');
+            var currentDate = new Date();
+            var timeDifference = currentDate - creationDate;
+            var seconds = Math.floor(timeDifference / 1000);
+            var minutes = Math.floor(seconds / 60);
+            var hours = Math.floor(minutes / 60);
+            var days = Math.floor(hours / 24);
+            document.getElementById('momk').textContent = days + ' ngày, ' + hours % 24 + ' giờ, ' + minutes % 60 + ' phút, ' + seconds % 60 + ' giây';
+        }
+        updateElapsedTime();
+        setInterval(updateElapsedTime, 1000);
+    </script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var fps = document.getElementById("fps");
+        var startTime = Date.now();
+        var frame = 0;
+
+        function tick() {
+            var time = Date.now();
+            frame++;
+            if (time - startTime > 1000) {
+                fps.innerHTML = (frame / ((time - startTime) / 1000)).toFixed(1);
+                startTime = time;
+                frame = 0;
+            }
+            window.requestAnimationFrame(tick);
+        }
+        tick();
+    </script>
+    <script>
+        // Function to fetch and display the user's IP address
+        function getUserIpAddress() {
+            fetch('https://api64.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    var ipAddress = data.ip;
+                    document.getElementById('userIpAddress').textContent = ipAddress;
+                })
+                .catch(error => {
+                    console.error('Error fetching IP address:', error);
+                    document.getElementById('userIpAddress').textContent = 'Unable to retrieve IP address';
+                });
+        }
+
+        // Call the function to get and display the IP address
+        getUserIpAddress();
+    </script>
+
+</body>
+
+</html>
