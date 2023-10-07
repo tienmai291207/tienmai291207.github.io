@@ -1,0 +1,22 @@
+{
+  "name": "Cà Sang",
+  "short_name": "Cà Sang",
+  "description": "Cà Sang",
+  "start_url": "https://casang.site",
+  "scope": "/",
+  "background_color": "#54606D",
+  "theme_color": "#54606D",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "https://imgur.io/kTy0Exn?r",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://imgur.io/kTy0Exn?r",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
