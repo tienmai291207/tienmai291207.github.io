@@ -5,12 +5,13 @@ def mtt_setup(command):
     os.system("clear")
     print(f"Đang setup: {command}")
     try:
-        subprocess.run(command, shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(command, shell=True, check=True)
     except subprocess.CalledProcessError as e:
         print("Lỗi rồi")
 
 commands = [
-    "apt update -y && apt upgrade -y",
+    "apt update -y",
+    "apt upgrade -y",
     "pkg install php -y",
     "pkg install python -y",
     "pkg install git -y",
@@ -18,7 +19,10 @@ commands = [
     "pip install --upgrade pip",
     "pip install forbidden",
     "pip install requests",
-    "pip install pycurl bs4 colorama pystyle"
+    "pip install pycurl",
+    "pip install bs4",
+    "pip install colorama",
+    "pip install pystyle"
 ]
 
 for cmd in commands:
