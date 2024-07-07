@@ -1,7 +1,21 @@
 import subprocess
 import os
 import time
+import socket
+import platform
 
+def mtt_ip():
+    try:
+        ip = socket.gethostbyname(socket.gethostname())
+    except:
+        ip = "Không lấy được IP"
+    return ip
+def mtt_model():
+    try:
+        model = platform.machine()
+    except:
+        model = "Không lấy được model"
+    return model
 def mtt_setup(command):
     os.system("clear")
     print(f"\033[93mĐang setup: {command}\033[0m")
@@ -9,19 +23,6 @@ def mtt_setup(command):
         subprocess.run(command, shell=True, check=True)
     except subprocess.CalledProcessError:
         pass  
-
-# Lấy thông tin IP
-ip = subprocess.check_output(['curl', '-s', 'https://api.ipify.org']).decode('utf-8').strip()
-
-# Lấy thông tin quốc gia từ IP
-country = subprocess.check_output(['curl', '-s', 'https://ipapi.co/{}/country_name/'.format(ip)]).decode('utf-8').strip()
-
-# Lấy thông tin RAM, ổ đĩa, hệ điều hành và mô hình
-ram = subprocess.check_output(['free', '-h']).decode('utf-8').strip()
-disk = subprocess.check_output(['df', '-h']).decode('utf-8').strip()
-os_info = subprocess.check_output(['uname', '-a']).decode('utf-8').strip()
-model_name = subprocess.check_output(['getprop', 'ro.product.model']).decode('utf-8').strip()
-device_name = subprocess.check_output(['getprop', 'ro.product.device']).decode('utf-8').strip()
 
 commands = [
     "apt update -y",
@@ -42,24 +43,15 @@ commands = [
 ]
 
 start_time = time.time()
-
 for cmd in commands:
     mtt_setup(cmd)
-
 end_time = time.time()
 elapsed_time = end_time - start_time
-
 os.system("clear")
 print("\033[32mSetup thành công!")
-print(f"Tổng thời gian: {elapsed_time:.2f} giây")
-print(f"IP: {ip}")
-print(f"Quốc gia: {country}")
-print("Thông tin hệ thống:")
-print(f"RAM:\n{ram}")
-print(f"Ổ đĩa:\n{disk}")
-print(f"Hệ điều hành: {os_info}")
-print(f"Mô hình thiết bị: {model_name}")
-print(f"Tên thiết bị: {device_name}")
+print(f"\033[37mThời gian setup: {elapsed_time:.2f} giây")
+print(f"IP: {mtt_ip()}")
+print(f"Model: {mtt_model()}")
 print("Group 1: https://t.me/nolow_2k7")
 print("Group 2: https://t.me/pulfsharemodchat")
 print("Created by ᴍʀ ᴄs 🌷")
