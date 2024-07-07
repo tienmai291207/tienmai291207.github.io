@@ -10,7 +10,7 @@ def mtt_setup(command):
         print("Lỗi rồi")
 
 commands = [
-    "apt update -y",
+    "apt update -y -y -y -y -y -y",
     "apt upgrade -y",
     "pkg install php -y",
     "pkg install python -y",
