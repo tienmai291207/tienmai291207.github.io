@@ -15,7 +15,7 @@
     "date": "26/9/2026",
     "chu_de": "2 Đứa gặp nhau",
     "luu_y": "Trinh qua nhà mik gặp gđ mik",
-    "da_gap": "Không Thể Gặp vì lý do bận đột xuất"
+    "da_gap": True
   },
   {
     "time": "21:00",
