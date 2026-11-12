@@ -1,15 +1,15 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "apk": "http://snow.pikamc.vn:25163/apk/update.apk",
   "changelog": {
-    "title": "Cập nhật phiên bản 1.3.0",
-    "description": "Khám phá những tính năng mới và cải tiến trong phiên bản mới nhất.",
+    "title": "Cập nhật phiên bản 1.4.0",
+    "description": "Trả lời trạng thái và hàng loạt cải tiến trải nghiệm — những tính năng mới trong phiên bản này.",
     "features": [
-      "Cập nhật giao diện ứng dụng trực quan và thân thiện hơn.",
-      "Cải thiện tốc độ khởi động và hiệu suất hoạt động.",
-      "Tối ưu trải nghiệm sử dụng và khả năng tương thích.",
-      "Sửa các lỗi tồn tại ở phiên bản trước.",
-      "Cải thiện độ ổn định và bảo mật của ứng dụng."
+      "Trả lời TRẠNG THÁI của người ấy bằng tin nhắn — bubble hội thoại ngay dưới thẻ trạng thái, có thông báo.",
+      "Xem & xoá trả lời trạng thái; lịch sử truy cập xoá toàn bộ ngay trong sheet.",
+      "Sửa lỗi bàn phím ảo đẩy thanh menu lên khi nhập (trả lời ghi chú, trả lời trạng thái…) — thanh menu giờ tự ẩn mượt khi gõ.",
+      "Cải thiện độ ổn định và sửa các lỗi tồn tại ở phiên bản trước."
     ]
   }
 }
+ 
