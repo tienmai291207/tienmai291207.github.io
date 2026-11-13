@@ -1,14 +1,14 @@
 {
-  "version": "1.4.0",
+  "version": "1.4.5",
   "apk": "http://snow.pikamc.vn:25163/apk/update.apk",
   "changelog": {
-    "title": "Cập nhật phiên bản 1.4.0",
-    "description": "Trả lời trạng thái và hàng loạt cải tiến trải nghiệm — những tính năng mới trong phiên bản này.",
+    "title": "Cập nhật phiên bản 1.4.5",
+    "description": "Sửa một số lỗi.",
     "features": [
-      "Trả lời TRẠNG THÁI của người ấy bằng tin nhắn — bubble hội thoại ngay dưới thẻ trạng thái, có thông báo.",
-      "Xem & xoá trả lời trạng thái; lịch sử truy cập xoá toàn bộ ngay trong sheet.",
-      "Sửa lỗi bàn phím ảo đẩy thanh menu lên khi nhập (trả lời ghi chú, trả lời trạng thái…) — thanh menu giờ tự ẩn mượt khi gõ.",
-      "Cải thiện độ ổn định và sửa các lỗi tồn tại ở phiên bản trước."
+      "Sửa lỗi trả lời ghi chú chạm giữ và ghi chú đối phương để trả lời ghi chú của họ.",
+      "Sửa lỗi lưu ảnh/video chất lượng gốc.",
+      "Sửa lỗi xem video trên app.",
+      "Thêm tính năng chat nhắn tin trên app."
     ]
   }
 }
